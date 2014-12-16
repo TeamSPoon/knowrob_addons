@@ -50,7 +50,18 @@
         add_object_as_semantic_instance/4,
         add_robot_as_basic_semantic_instance/3,
         get_designator/2,
-        publish_designator/1
+        publish_designator/1,
+
+        metadata_creator/1,
+        metadata_description/1,
+        metadata_experiment/1,
+        metadata_experiment_name/1,
+        metadata_owl_exporter_version/1,
+        metadata_robot/1,
+        metadata_start/1,
+        metadata_end/1,
+
+        play_video/4
     ]).
 :- use_module(library('semweb/rdf_db')).
 :- use_module(library('semweb/rdfs')).
@@ -581,3 +592,52 @@ image_of_perceived_scene(T) :-
     atomic_list_concat([_Prefix, Dir], '#', Directory),
     atomic_list_concat([Dir, Path], '/', CompletePath),
     show_image(CompletePath).
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
+% Accessing experiment metadata
+%
+
+metadata_creator(Creator) :-
+    rdf_has(Meta, rdf:type, knowrob:'ExperimentMetaData'),
+    rdf_has(Meta, knowrob:'creator', literal(type(_, Creator))).
+
+metadata_description(Desc) :-
+    rdf_has(Meta, rdf:type, knowrob:'ExperimentMetaData'),
+    rdf_has(Meta, knowrob:'description', literal(type(_, Desc))).
+
+metadata_experiment(Exp) :-
+    rdf_has(Meta, rdf:type, knowrob:'ExperimentMetaData'),
+    rdf_has(Meta, knowrob:'experiment', literal(type(_, Exp))).
+
+metadata_experiment_name(Name) :-
+    rdf_has(Meta, rdf:type, knowrob:'ExperimentMetaData'),
+    rdf_has(Meta, knowrob:'experimentName', literal(type(_, Name))).
+
+metadata_owl_exporter_version(Version) :-
+    rdf_has(Meta, rdf:type, knowrob:'ExperimentMetaData'),
+    rdf_has(Meta, knowrob:'owlExporterVersion', literal(type(_, Version))).
+
+metadata_robot(Robot) :-
+    rdf_has(Meta, rdf:type, knowrob:'ExperimentMetaData'),
+    rdf_has(Meta, knowrob:'robot', literal(type(_, Robot))).
+
+metadata_start(Start) :-
+    rdf_has(Meta, rdf:type, knowrob:'ExperimentMetaData'),
+    rdf_has(Meta, knowrob:'timeStart', literal(type(_, Start))).
+
+metadata_end(End) :-
+    rdf_has(Meta, rdf:type, knowrob:'ExperimentMetaData'),
+    rdf_has(Meta, knowrob:'timeEnd', literal(type(_, End))).
+
+play_video(Path, Start, Duration, Speed) :-
+    string_concat('mplayer -ss ', Start, _X),
+    string_concat(_X, ' -endpos ', _Y),
+    string_concat(_Y, Duration, _Z),
+    string_concat(_Z, ' -speed ', _A),
+    string_concat(_A, Speed, _B),
+    string_concat(_B, ' ', _C),
+    string_concat(_C, Path, _Command),
+    shell(_Command).
