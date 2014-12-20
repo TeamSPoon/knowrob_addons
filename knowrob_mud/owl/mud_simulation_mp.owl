@@ -7,6 +7,7 @@
           <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
           <!ENTITY knowrob 'http://knowrob.org/kb/knowrob.owl#'>
           <!ENTITY sim 'http://knowrob.org/kb/simulation_map.owl#'>
+	  <!ENTITY mud 'http://knowrob.org/kb/mud_simulation_map.owl#'>
 
           ]>
 
@@ -17,9 +18,9 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:knowrob="&knowrob;"
-   xmlns:sim="http://knowrob.org/kb/simulation_map.owl#"
-   xml:base="http://knowrob.org/kb/simulation_map.owl">
-  <owl:Ontology rdf:about="http://knowrob.org/kb/simulation_map.owl">
+   xmlns:sim="http://knowrob.org/kb/mud_simulation_map.owl#"
+   xml:base="http://knowrob.org/kb/mud_simulation_map.owl">
+  <owl:Ontology rdf:about="http://knowrob.org/kb/mud_simulation_map.owl">
         <owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
   </owl:Ontology>
 
@@ -172,7 +173,7 @@
     </owl:NamedIndividual>
 
     <!-- timepoint_1313654300 -->
-    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/simulation_map.owl#timepoint_1313654300">
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/mud_simulation_map.owl#timepoint_1313654300">
         <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#TimePoint"/>
     </owl:NamedIndividual>
 

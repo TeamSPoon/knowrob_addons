@@ -1,14 +1,14 @@
 <package>
-  <name>knowrob_sim</name>
+  <name>knowrob_mud</name>
   <version>1.0.0</version>
-  <description>knowrob_sim</description>
-  <maintainer email="yfang@cs.uni-bremen.de">Zhou Fang</maintainer>
+  <description>knowrob_mud</description>
+  <maintainer email="logicmoo@gmail.com">Douglas Miles</maintainer>
 
-  <license>BSD</license>
+  <license>LGPL</license>
 
-  <url type="website">http://ros.org/wiki/knowrob_sim</url>
+  <url type="website">http://ros.org/wiki/knowrob_mud</url>
 
-  <author>Zhou Fang</author>
+  <author>Douglas Miles</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
