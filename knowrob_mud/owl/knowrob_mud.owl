@@ -6,7 +6,7 @@
           <!ENTITY owl 'http://www.w3.org/2002/07/owl'>
           <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
           <!ENTITY knowrob 'http://knowrob.org/kb/knowrob.owl#'>
-          <!ENTITY knowrob_sim 'http://knowrob.org/kb/knowrob_sim.owl#'>
+          <!ENTITY knowrob_mud 'http://knowrob.org/kb/knowrob_mud.owl#'>
 
           ]>
 
@@ -17,9 +17,9 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:knowrob="&knowrob;"
-   xmlns:knowrob_sim="http://knowrob.org/kb/knowrob_sim.owl#"
-   xml:base="http://knowrob.org/kb/knowrob_sim.owl">
-  <owl:Ontology rdf:about="http://knowrob.org/kb/knowrob_sim.owl">
+   xmlns:knowrob_mud="http://knowrob.org/kb/knowrob_mud.owl#"
+   xml:base="http://knowrob.org/kb/knowrob_mud.owl">
+  <owl:Ontology rdf:about="http://knowrob.org/kb/knowrob_mud.owl">
         <owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
   </owl:Ontology>
 
@@ -36,7 +36,7 @@
     <!-- http://knowrob.org/kb/knowrob.owl#FluidFlow-Translation -->
 
     <rdf:Description rdf:about="&knowrob;FluidFlow-Translation">
-        <rdfs:subClassOf rdf:resource="&knowrob_sim;SimulationEvent"/>
+        <rdfs:subClassOf rdf:resource="&knowrob_mud;SimulationEvent"/>
     </rdf:Description>
 
 
@@ -44,7 +44,7 @@
     <!-- http://knowrob.org/kb/knowrob.owl#GraspingSomething -->
 
     <rdf:Description rdf:about="&knowrob;GraspingSomething">
-        <rdfs:subClassOf rdf:resource="&knowrob_sim;SimulationEvent"/>
+        <rdfs:subClassOf rdf:resource="&knowrob_mud;SimulationEvent"/>
     </rdf:Description>
 
 
@@ -52,32 +52,32 @@
     <!-- http://knowrob.org/kb/knowrob.owl#HoldingAnObject -->
 
     <rdf:Description rdf:about="&knowrob;HoldingAnObject">
-        <rdfs:subClassOf rdf:resource="&knowrob_sim;SimulationEvent"/>
+        <rdfs:subClassOf rdf:resource="&knowrob_mud;SimulationEvent"/>
     </rdf:Description>
 
 
 
-    <!-- http://knowrob.org/kb/knowrob_sim.owl#SimulationEvent -->
+    <!-- http://knowrob.org/kb/knowrob_mud.owl#SimulationEvent -->
 
-    <owl:Class rdf:about="&knowrob_sim;SimulationEvent">
+    <owl:Class rdf:about="&knowrob_mud;SimulationEvent">
         <rdfs:subClassOf rdf:resource="&knowrob;Event"/>
     </owl:Class>
 
 
 
-    <!-- http://knowrob.org/kb/knowrob_sim.owl#SupportingSituation -->
+    <!-- http://knowrob.org/kb/knowrob_mud.owl#SupportingSituation -->
 
-    <owl:Class rdf:about="&knowrob_sim;SupportingSituation">
-        <rdfs:subClassOf rdf:resource="&knowrob_sim;TouchingSituation"/>
+    <owl:Class rdf:about="&knowrob_mud;SupportingSituation">
+        <rdfs:subClassOf rdf:resource="&knowrob_mud;TouchingSituation"/>
     </owl:Class>
 
 
 
-    <!-- http://knowrob.org/kb/knowrob_sim.owl#TouchingSituation -->
+    <!-- http://knowrob.org/kb/knowrob_mud.owl#TouchingSituation -->
 
-    <owl:Class rdf:about="&knowrob_sim;TouchingSituation">
+    <owl:Class rdf:about="&knowrob_mud;TouchingSituation">
         <rdfs:subClassOf rdf:resource="&knowrob;StaticSituation"/>
-        <rdfs:subClassOf rdf:resource="&knowrob_sim;SimulationEvent"/>
+        <rdfs:subClassOf rdf:resource="&knowrob_mud;SimulationEvent"/>
     </owl:Class>
 </rdf:RDF>
 

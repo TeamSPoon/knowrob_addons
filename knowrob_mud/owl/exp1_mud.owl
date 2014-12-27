@@ -7,7 +7,7 @@
           <!ENTITY owl 'http://www.w3.org/2002/07/owl'>
           <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
           <!ENTITY knowrob 'http://knowrob.org/kb/knowrob.owl#'>
-          <!ENTITY sim 'http://knowrob.org/kb/knowrob_sim.owl#'>
+          <!ENTITY mud 'http://knowrob.org/kb/knowrob_mud.owl#'>
 
           ]>
 
@@ -18,45 +18,45 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:knowrob="&knowrob;"
-   xmlns:sim="http://knowrob.org/kb/knowrob_sim.owl#"
-   xml:base="http://knowrob.org/kb/knowrob_sim.owl">
-  <owl:Ontology rdf:about="http://knowrob.org/kb/knowrob_sim.owl">
+   xmlns:mud="http://knowrob.org/kb/knowrob_mud.owl#"
+   xml:base="http://knowrob.org/kb/knowrob_mud.owl">
+  <owl:Ontology rdf:about="http://knowrob.org/kb/knowrob_mud.owl">
         <owl:imports rdf:resource="&local_path;knowrob.owl"/>
   </owl:Ontology>
 
 
-  <owl:namedIndividual rdf:about="&sim;HoldingAnObject_Rsdjj4sj">
+  <owl:namedIndividual rdf:about="&mud;HoldingAnObject_Rsdjj4sj">
       <rdf:type rdf:resource="&knowrob;HoldingAnObject"/>
-      <knowrob:startTime rdf:resource="&sim;timepoint_1377766200"/>
-      <knowrob:endTime rdf:resource="&sim;timepoint_1377766305"/>
-      <knowrob:objectActedOn rdf:resource="&sim;cup1"/>
+      <knowrob:startTime rdf:resource="&mud;timepoint_1377766200"/>
+      <knowrob:endTime rdf:resource="&mud;timepoint_1377766305"/>
+      <knowrob:objectActedOn rdf:resource="&mud;cup1"/>
   </owl:namedIndividual>
   
-  <owl:namedIndividual rdf:about="&sim;FluidFlow_Rsdjj4sj">
+  <owl:namedIndividual rdf:about="&mud;FluidFlow_Rsdjj4sj">
       <rdf:type rdf:resource="&knowrob;FluidFlow-Translation"/>
-      <knowrob:startTime rdf:resource="&sim;timepoint_1377766205"/>
-      <knowrob:endTime rdf:resource="&sim;timepoint_1377766300"/>
+      <knowrob:startTime rdf:resource="&mud;timepoint_1377766205"/>
+      <knowrob:endTime rdf:resource="&mud;timepoint_1377766300"/>
   </owl:namedIndividual>
 
-  <owl:namedIndividual rdf:about="&sim;cup1">
+  <owl:namedIndividual rdf:about="&mud;cup1">
       <rdf:type rdf:resource="&knowrob;Cup"/>
   </owl:namedIndividual>
   
 
-  <owl:NamedIndividual rdf:about="&sim;timepoint_1377766200">
+  <owl:NamedIndividual rdf:about="&mud;timepoint_1377766200">
       <rdf:type rdf:resource="&knowrob;TimePoint"/>
       <knowrob:timeValue >1377766200</knowrob:timeValue>
   </owl:NamedIndividual>
   
-  <owl:NamedIndividual rdf:about="&sim;timepoint_1377766205">
+  <owl:NamedIndividual rdf:about="&mud;timepoint_1377766205">
       <rdf:type rdf:resource="&knowrob;TimePoint"/>
   </owl:NamedIndividual>
   
-  <owl:NamedIndividual rdf:about="&sim;timepoint_1377766300">
+  <owl:NamedIndividual rdf:about="&mud;timepoint_1377766300">
       <rdf:type rdf:resource="&knowrob;TimePoint"/>
   </owl:NamedIndividual>
   
-  <owl:NamedIndividual rdf:about="&sim;timepoint_1377766305">
+  <owl:NamedIndividual rdf:about="&mud;timepoint_1377766305">
       <rdf:type rdf:resource="&knowrob;TimePoint"/>
   </owl:NamedIndividual>
   

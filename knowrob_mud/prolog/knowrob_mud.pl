@@ -56,7 +56,7 @@
 :- use_module(library('knowrob_mongo')).
 
 :- rdf_db:rdf_register_ns(knowrob, 'http://knowrob.org/kb/knowrob.owl#',  [keep(true)]).
-:- rdf_db:rdf_register_ns(knowrob_mud_, 'http://knowrob.org/kb/knowrob_mud_.owl#', [keep(true)]).
+:- rdf_db:rdf_register_ns(knowrob_mud, 'http://knowrob.org/kb/knowrob_mud.owl#', [keep(true)]).
 :- rdf_db:rdf_register_ns(knowrob_cram, 'http://knowrob.org/kb/knowrob_cram.owl#', [keep(true)]).
 
 % define predicates as rdf_meta predicates

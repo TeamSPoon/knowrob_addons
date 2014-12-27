@@ -18,7 +18,8 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:knowrob="&knowrob;"
-   xmlns:sim="http://knowrob.org/kb/mud_simulation_map.owl#"
+   xmlns:mud_sim="http://knowrob.org/kb/mud_simulation_map.owl#"
+   xmlns:sim="http://knowrob.org/kb/simulation_map.owl#"
    xml:base="http://knowrob.org/kb/mud_simulation_map.owl">
   <owl:Ontology rdf:about="http://knowrob.org/kb/mud_simulation_map.owl">
         <owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
@@ -167,8 +168,8 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- SemanticEnvironmentMap_SAsdfs -->
-    <owl:NamedIndividual rdf:about="&sim;SemanticEnvironmentMap_SAsdfs">
+    <!-- SemanticEnvironmentMap_SAsdfs_MUD -->
+    <owl:NamedIndividual rdf:about="&mud;SemanticEnvironmentMap_SAsdfs_MUD">
         <rdf:type rdf:resource="&knowrob;SemanticEnvironmentMap"/>
     </owl:NamedIndividual>
 
@@ -179,7 +180,7 @@
 
 
     <knowrob:CounterTop rdf:about="#CounterTop_Asdkll">
-        <knowrob:describedInMap rdf:resource="&sim;SemanticEnvironmentMap_SAsdfs"/>
+        <knowrob:describedInMap rdf:resource="&mud;SemanticEnvironmentMap_SAsdfs_MUD"/>
         <knowrob:heightOfObject rdf:datatype="&xsd;float">0.03</knowrob:heightOfObject>
         <knowrob:widthOfObject rdf:datatype="&xsd;float">0.80</knowrob:widthOfObject>
         <knowrob:depthOfObject rdf:datatype="&xsd;float">2.45</knowrob:depthOfObject> 
@@ -187,7 +188,7 @@
     </knowrob:CounterTop>
 
     <knowrob:TableLeft rdf:about="#TableLeft_Asdkll">
-        <knowrob:describedInMap rdf:resource="&sim;SemanticEnvironmentMap_SAsdfs"/>
+        <knowrob:describedInMap rdf:resource="&mud;SemanticEnvironmentMap_SAsdfs_MUD"/>
         <knowrob:heightOfObject rdf:datatype="&xsd;float">0.82</knowrob:heightOfObject> 
         <knowrob:widthOfObject rdf:datatype="&xsd;float">0.60</knowrob:widthOfObject> 
         <knowrob:depthOfObject rdf:datatype="&xsd;float">0.03</knowrob:depthOfObject>
@@ -195,7 +196,7 @@
     </knowrob:TableLeft>
 
     <knowrob:TableLeft rdf:about="#TableRight_Asdkll">
-        <knowrob:describedInMap rdf:resource="&sim;SemanticEnvironmentMap_SAsdfs"/>
+        <knowrob:describedInMap rdf:resource="&mud;SemanticEnvironmentMap_SAsdfs_MUD"/>
         <knowrob:heightOfObject rdf:datatype="&xsd;float">0.82</knowrob:heightOfObject> <!--Z-->
         <knowrob:widthOfObject rdf:datatype="&xsd;float">0.60</knowrob:widthOfObject> <!--X-->
         <knowrob:depthOfObject rdf:datatype="&xsd;float">0.03</knowrob:depthOfObject> <!--Y-->

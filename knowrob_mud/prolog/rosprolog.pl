@@ -16,25 +16,19 @@ user:file_search_path(pack, knowrob).
 user:file_search_path(ros, knowrob).
 
 
-% enumerate_files(Spec,Result):- \+ exists_file_or_dir(Spec),!,expand_file_search_path(Spec,Result).
-enumerate_files(Spec,Result):-expand_file_name(Spec,ResultList),member(NResult,ResultList),normalize_path(NResult,Result).
 
-exists_file_or_dir(X):-exists_file(X),!.
-exists_file_or_dir(X):-is_directory(X).
-is_directory(X):-exists_directory(X).
+rdf_reload_file(File):-file_name_extension(_,'n3',File),!,rdf_unload(File),rdf_load(File,[format(trig),register_namespaces(true)]).
+rdf_reload_file(File):-rdf_unload(File),rdf_load(File,[register_namespaces(true)]).
 
-concat_paths(ParentIn,Child,Result):- enumerate_files(ParentIn,Parent),
-   (is_directory(Parent) -> directory_file_path(Parent,Child,Joined) ; atom_concat(Parent,Child,Joined)),
-   enumerate_files(Joined,Result).
+sw_file(Package,Subdir,File):- rospack_package_path(Package,PackageDir),
+   concat_paths(PackageDir,Subdir,MiloDir),
+   member(S,['./','./*/','./*/*/','./*/*/*','./*/*/*/*','./*/*/*/*/*']),
+   concat_paths(MiloDir,S,FDir),
+   concat_paths(FDir,'*{.n3,.owl,.ttl}',File).
 
-concat_paths([Joined],Result):- !,enumerate_files(Joined,Result).
-concat_paths([ParentIn,Child|MORE],Result):- concat_paths(ParentIn,Child,ResultM),concat_paths([ResultM|MORE],Result).
 
 ros_library_directory(WhereF2):-user:file_search_path(knowrob,W),once((atom_concat(W,'/*/prolog/',O),
   expand_file_name(O,ListE))),member(Where,ListE),normalize_path(Where,WhereF2).
-
-normalize_path(Where,WhereF2):- absolute_file_name(Where,WhereF),prolog_to_os_filename(WhereF,WhereF1),prolog_to_os_filename(WhereF2,WhereF1),!.
-normalize_path(Where,Where):-!.
 
 
 % ros_package(B):-ros_library_directory(WhereF2),concat_paths(WhereF2,(..),O),file_base_name(O,B).
@@ -181,7 +175,10 @@ concat_env(Var,Val):-
 	setenv(Var,NewVal).
 
 forall_show(Call):- forall(Call,dmsg(Call)) *-> true; fmt(call_failed(Call)).
-       
+
+
+end_of_file.
+
 :- register_ros_package(knowrob_common).
 :- register_ros_package(knowrob_roslog_launch).
 :- register_ros_package(knowrob_cram).
@@ -190,6 +187,12 @@ forall_show(Call):- forall(Call,dmsg(Call)) *-> true; fmt(call_failed(Call)).
 :- register_ros_package(knowrob_vis).
 :- register_ros_package(iai_semantic_maps).
 :- register_ros_package(knowrob_srdl).
+:- init_ros_package(knowrob_common).
+% :- init_ros_package(prolog_perception).
+:- init_ros_package(knowrob_actions).
+% :- init_ros_package(ias_knowledge_base).
+:- init_ros_package(comp_missingobj).
+% :- init_ros_package(comp_semantic_map).
 :- forall_show(user:file_search_path(knowrob,_Where)).
 
 % :- forall(no_repeats(ros_package(B)),must(init_ros_package(B))).
@@ -197,14 +200,6 @@ forall_show(Call):- forall(Call,dmsg(Call)) *-> true; fmt(call_failed(Call)).
 :- forall_show(ros_package_initialized(_Where)).
 
 
-end_of_file.
-
-:- init_ros_package(knowrob_common).
-% :- init_ros_package(prolog_perception).
-% :- init_ros_package(knowrob_actions).
-% :- init_ros_package(ias_knowledge_base).
-% :- init_ros_package(comp_missingobj).
-% :- init_ros_package(comp_semantic_map).
 % :- init_ros_package(semweb).
 
 
